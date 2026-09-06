@@ -1,1 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>F1 Engineering Roadmap</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>F1</span>
+            ENGINEERING
+        </div>
+
+        <div class="nav">
+
+            <button class="nav-button active" onclick="showPage('dashboard')">
+                🏠 Dashboard
+            </button>
+
+            <button class="nav-button" onclick="showPage('today')">
+                🎯 Today's Mission
+            </button>
+
+            <button class="nav-button" onclick="showPage('calendar')">
+                📅 Calendar
+            </button>
+
+            <button class="nav-button" onclick="showPage('learning')">
+                📚 Learning Library
+            </button>
+
+            <button class="nav-button" onclick="showPage('projects')">
+                🔧 Projects
+            </button>
+
+            <button class="nav-button" onclick="showPage('progress')">
+                📈 Progress
+            </button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <p>10th Grade →</p>
+            <p>Mechanical Engineering →</p>
+            <p>Motorsport →</p>
+            <strong>F1 🏎️</strong>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active-page">
+
+            <div class="top">
+
+                <div>
+
+                    <div class="eyebrow">
+                        YOUR ENGINEERING JOURNEY
+                    </div>
+
+                    <h1>F1 Engineering Roadmap</h1>
+
+                    <p class="subtitle">
+                        One focused engineering lesson every day.
+                        Build. Test. Measure. Improve.
+                    </p>
+
+                </div>
+
+                <button class="primary-button"
+                        onclick="showPage('today')">
+                    Start Today's Mission →
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="card hero-card">
+
+                    <div class="eyebrow">
+                        TODAY'S LESSON
+                    </div>
+
+                    <h2 id="todayTitle">
+                        Loading...
+                    </h2>
+
+                    <span class="tag" id="todayCategory">
+                        Engineering
+                    </span>
+
+                    <p id="todayDescription">
+                        Loading today's lesson...
+                    </p>
+
+                    <div class="button-row">
+
+                        <button class="primary-button"
+                                onclick="completeToday()">
+                            ✓ Complete Lesson
+                        </button>
+
+                        <button class="secondary-button"
+                                onclick="showPage('today')">
+                            View Lesson
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card progress-card">
+
+                    <div class="eyebrow">
+                        YOUR PROGRESS
+                    </div>
+
+                    <div class="big-number">
+                        <span id="completedCount">0</span>
+                        /
+                        <span id="totalCount">365</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="progressFill"
+                             class="progress-fill">
+                        </div>
+                    </div>
+
+                    <p id="progressPercent">
+                        0% complete
+                    </p>
+
+                </div>
+
+
+                <div class="card mindset-card">
+
+                    <div class="eyebrow">
+                        ENGINEER'S MINDSET
+                    </div>
+
+                    <h2>Don't just learn it.</h2>
+
+                    <p>
+                        Prove it.
+                    </p>
+
+                    <ul>
+
+                        <li>Define the problem.</li>
+                        <li>Make a prediction.</li>
+                        <li>Build or simulate.</li>
+                        <li>Measure the result.</li>
+                        <li>Figure out why.</li>
+                        <li>Improve the design.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="card portfolio-card">
+
+                    <div class="eyebrow">
+                        BUILD YOUR PORTFOLIO
+                    </div>
+
+                    <h2>Every project becomes evidence.</h2>
+
+                    <p>
+                        Save your CAD models, calculations,
+                        drawings, simulations, test data,
+                        failures and redesigns.
+                    </p>
+
+                    <button class="secondary-button"
+                            onclick="showPage('projects')">
+                        Explore Projects →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TODAY -->
+        <section id="today" class="page">
+
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    TODAY'S ENGINEERING LAB
+                </div>
+
+                <h1 id="lessonTitle">
+                    Today's Mission
+                </h1>
+
+                <p id="lessonSubtitle">
+                    Loading...
+                </p>
+
+            </div>
+
+
+            <div class="lesson-layout">
+
+                <div class="card lesson-main">
+
+                    <span class="tag" id="lessonCategory">
+                        Engineering
+                    </span>
+
+                    <h2>🎯 Mission</h2>
+
+                    <p id="lessonMission">
+                        Loading...
+                    </p>
+
+
+                    <h2>🧠 What You Need To Learn</h2>
+
+                    <p id="lessonLearn">
+                        Loading...
+                    </p>
+
+
+                    <h2>🔨 Build / Practice</h2>
+
+                    <p id="lessonBuild">
+                        Loading...
+                    </p>
+
+
+                    <h2>🧪 Test Yourself</h2>
+
+                    <p id="lessonTest">
+                        Loading...
+                    </p>
+
+
+                    <h2>🏆 Challenge</h2>
+
+                    <p id="lessonChallenge">
+                        Loading...
+                    </p>
+
+
+                    <h2>📁 Portfolio Evidence</h2>
+
+                    <p id="lessonPortfolio">
+                        Loading...
+                    </p>
+
+
+                    <div class="button-row">
+
+                        <button class="primary-button"
+                                onclick="completeToday()">
+                            ✓ Mark Complete
+                        </button>
+
+                        <button class="secondary-button"
+                                onclick="openResource()">
+                            Open Learning Resource ↗
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card checklist">
+
+                    <div class="eyebrow">
+                        ENGINEERING CHECKLIST
+                    </div>
+
+                    <label>
+                        <input type="checkbox">
+                        I understand the concept
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        I made a prediction
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        I built/simulated something
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        I tested it
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        I recorded my results
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        I know what I'd change
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CALENDAR -->
+        <section id="calendar" class="page">
+
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    YOUR TRAINING SCHEDULE
+                </div>
+
+                <h1>Learning Calendar</h1>
+
+                <p>
+                    See what you're learning today and in the future.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="calendar-controls">
+
+                    <button class="secondary-button"
+                            onclick="previousMonth()">
+                        ←
+                    </button>
+
+                    <h2 id="calendarMonth">
+                        Month
+                    </h2>
+
+                    <button class="secondary-button"
+                            onclick="nextMonth()">
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="calendar-week">
+
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+
+                </div>
+
+
+                <div id="calendarGrid"
+                     class="calendar-grid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LEARNING LIBRARY -->
+        <section id="learning" class="page">
+
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    ENGINEERING KNOWLEDGE
+                </div>
+
+                <h1>Learning Library</h1>
+
+                <p>
+                    Your engineering toolbox.
+                </p>
+
+            </div>
+
+
+            <div id="learningList"
+                 class="resource-list">
+            </div>
+
+        </section>
+
+
+
+        <!-- PROJECTS -->
+        <section id="projects" class="page">
+
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    BUILD SOMETHING
+                </div>
+
+                <h1>Engineering Projects</h1>
+
+                <p>
+                    Projects turn knowledge into actual engineering experience.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <span>PROJECT 01</span>
+
+                    <h2>F1 Suspension</h2>
+
+                    <p>
+                        Design a simplified double-wishbone suspension.
+                        Create the control arms, upright, spring/damper
+                        and mounting points.
+                    </p>
+
+                    <ul>
+                        <li>CAD assembly</li>
+                        <li>Suspension geometry</li>
+                        <li>Motion study</li>
+                        <li>Design review</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(0)">
+                        Start Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <span>PROJECT 02</span>
+
+                    <h2>Mini Gearbox</h2>
+
+                    <p>
+                        Design a multi-stage gearbox with a target
+                        reduction ratio.
+                    </p>
+
+                    <ul>
+                        <li>Gear ratios</li>
+                        <li>Torque</li>
+                        <li>Bearings</li>
+                        <li>Shaft design</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(1)">
+                        Start Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <span>PROJECT 03</span>
+
+                    <h2>Aero Wing</h2>
+
+                    <p>
+                        Design a small adjustable aerodynamic wing
+                        and investigate how changing its geometry
+                        affects aerodynamic performance.
+                    </p>
+
+                    <ul>
+                        <li>Airflow</li>
+                        <li>Angle of attack</li>
+                        <li>Downforce</li>
+                        <li>Drag</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(2)">
+                        Start Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <span>PROJECT 04</span>
+
+                    <h2>Robotics Data Logger</h2>
+
+                    <p>
+                        Build a system that measures something on your
+                        robot and analyzes the data with Python.
+                    </p>
+
+                    <ul>
+                        <li>Sensors</li>
+                        <li>Data collection</li>
+                        <li>Python</li>
+                        <li>Graphs</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(3)">
+                        Start Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <span>PROJECT 05</span>
+
+                    <h2>Optimized Bracket</h2>
+
+                    <p>
+                        Design a lightweight bracket, identify its
+                        likely failure points and improve it.
+                    </p>
+
+                    <ul>
+                        <li>Stress</li>
+                        <li>FEA</li>
+                        <li>Material selection</li>
+                        <li>Weight reduction</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(4)">
+                        Start Project
+                    </button>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <span>PROJECT 06</span>
+
+                    <h2>Mechanical Teardown</h2>
+
+                    <p>
+                        Pick a mechanical device and reverse-engineer
+                        how every major component works together.
+                    </p>
+
+                    <ul>
+                        <li>Reverse engineering</li>
+                        <li>Measurements</li>
+                        <li>CAD reconstruction</li>
+                        <li>Design analysis</li>
+                    </ul>
+
+                    <button class="secondary-button project-button"
+                            onclick="startProject(5)">
+                        Start Project
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROGRESS -->
+        <section id="progress" class="page">
+
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    YOUR DEVELOPMENT
+                </div>
+
+                <h1>Progress</h1>
+
+                <p>
+                    Track the engineer you're becoming.
+                </p>
+
+            </div>
+
+
+            <div class="progress-overview">
+
+                <div class="card">
+
+                    <div class="eyebrow">
+                        LESSONS
+                    </div>
+
+                    <div class="big-number"
+                         id="progressLessons">
+                        0
+                    </div>
+
+                    <p>completed</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="eyebrow">
+                        CURRICULUM
+                    </div>
+
+                    <div class="big-number"
+                         id="progressPercentLarge">
+                        0%
+                    </div>
+
+                    <p>complete</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="eyebrow">
+                        PROJECTS
+                    </div>
+
+                    <div class="big-number">
+                        6
+                    </div>
+
+                    <p>available</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="eyebrow">
+                    SKILL AREAS
+                </div>
+
+                <div id="skillProgress"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
